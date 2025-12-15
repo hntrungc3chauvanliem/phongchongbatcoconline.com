@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CYBERLOCK – Tình huống mẫu & cách xử lý (tương tác · bản cân đối 18 tình huống)</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569;
+      --accent:#14b8a6; --accent2:#8b5cf6; --accent3:#fb7185; --line:#e2e8f0;
+    }
+    html,body{background:var(--bg); color:var(--text); font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Segoe UI Emoji";}
+    .wrap{max-width:1060px;margin:24px auto;padding:0 16px}
+    header{background:linear-gradient(135deg,var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%); color:#fff; border-radius:16px; padding:20px; display:flex; align-items:center; gap:12px; box-shadow:0 10px 30px rgba(139,92,246,.2)}
+    header h1{font-size:clamp(22px,4vw,32px);margin:8px 0}
+    header p{opacity:.95;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:18px 0}
+    .card{background:var(--card);border-radius:16px;padding:16px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .card h3{margin:6px 0 8px;font-size:18px}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;font-size:12px;background:#eef2ff;color:#4c1d95;border:1px solid #ddd}
+    .badge::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--accent2)}
+    .desc{color:var(--muted);font-size:14px;margin:8px 0 12px}
+    label{font-weight:600}
+    textarea{width:100%;min-height:80px;border:1px solid var(--line);background:#f8fafc;color:var(--text);border-radius:12px;padding:10px;resize:vertical}
+    .actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .btn{border:0;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--accent2);color:#fff}
+    .btn-secondary{background:var(--accent);color:#073b3a}
+    .btn-ghost{background:#eef2ff;color:#4c1d95}
+    .result{margin-top:10px;padding:12px;border-radius:12px;background:#f1f5f9;border:1px solid var(--line)}
+    .ok{border-color:#10b981;background:#ecfdf5;color:#064e3b}
+    .warn{border-color:#f59e0b;background:#fffbeb;color:#92400e}
+    .bad{border-color:#ef4444;background:#fef2f2;color:#7f1d1d}
+    details{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:20px}
+    summary{cursor:pointer}
+    .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .legend div{background:#f8fafc;border:1px solid var(--line);padding:10px;border-radius:12px}
+    footer{margin:30px 0;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img alt="CYBERLOCK" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.6'%3E%3Cpath d='M12 2l7 4v6c0 5-4 8-7 10-3-2-7-5-7-10V6l7-4z'/%3E%3Cpath d='M9 10l3-2 3 2v3l-3 2-3-2z'/%3E%3C/svg%3E" />
+      <div>
+        <h1>Tình huống mẫu & cách xử lý - Rèn luyện kỹ năng ứng phó</h1>
+        <p>Chọn tình huống, nhập hành động bạn sẽ làm, rồi nhấn <strong>Đánh giá</strong> để nhận phản hồi thân thiện – đa dạng.</p>
+      </div>
+    </header>
+
+    <section class="grid" id="scenarioGrid"></section>
+
+    <details>
+      <summary><strong>Gợi ý & Tiêu chí đánh giá</strong></summary>
+      <div class="legend">
+        <div>
+          <strong>Hành động tốt (An toàn)</strong>
+          <ul>
+            <li>Không gửi dữ liệu riêng tư (ảnh, địa chỉ, mật khẩu).</li>
+            <li>Chặn (block), báo cáo (report) và lưu bằng chứng (screenshot).</li>
+            <li>Thông báo cho phụ huynh/giáo viên/cơ quan chức năng.</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Hành động cần cân nhắc</strong>
+          <ul>
+            <li>Hỏi thêm thông tin nhưng vẫn giữ an toàn.</li>
+            <li>Tạm thời im lặng, không tiếp tục tương tác.</li>
+          </ul>
+        </div>
+        <div>
+          <strong>Hành động nguy hiểm</strong>
+          <ul>
+            <li>Gửi ảnh/địa chỉ/số điện thoại, đồng ý gặp riêng.</li>
+            <li>Nhấn vào link lạ, chuyển tiền, giữ bí mật với bố mẹ.</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <footer>CYBERLOCK – Bản tương tác dành cho phụ huynh, giáo viên và học sinh. © 2025</footer>
+  </div>
+
+<script>
+const scenarios = [
+  {id:'sc1',title:'Yêu cầu ảnh riêng tư hoặc địa chỉ',tag:'Cảnh báo người lạ',desc:'Một tài khoản lạ nhắn tin xin ảnh riêng tư và hỏi địa chỉ nhà/trường.',good:['khong gui','chan','bao cao','luu bang chung','noi voi phu huynh','bao voi giao vien'],bad:['gui anh','cho dia chi','so dien thoai','dong y gap'],suggest:'Cứ bình tĩnh nhé: chặn tài khoản, chụp màn hình lại và kể với phụ huynh/giáo viên để cùng xử lý.'},
+  {id:'sc2',title:'Lời mời gặp riêng kèm quà tặng',tag:'Cảnh giác lời mời',desc:'Người lạ hứa tặng quà nếu bạn gặp trực tiếp ở quán cà phê.',good:['tu choi','hoi y kien phu huynh','lien he gia dinh','bao cong an'],bad:['dong y','den gap','giu bi mat'],suggest:'Lời mời hấp dẫn thường có bẫy: lịch sự từ chối, nhắn ngay cho phụ huynh và không hẹn gặp riêng.'},
+  {id:'sc3',title:'Đe dọa/tống tiền qua tin nhắn',tag:'Đe dọa, tống tiền',desc:'Kẻ xấu yêu cầu chuyển tiền, nếu không sẽ phát tán ảnh của bạn.',good:['khong tra tien','bao cong an','luu bang chung','chan','bao cao'],bad:['chuyen tien','gui the cao'],suggest:'Đừng chuyển tiền. Hãy lưu bằng chứng, chặn kẻ xấu và liên hệ ngay với người lớn/cơ quan chức năng.'},
+  {id:'sc4',title:'Link trúng thưởng/nhận quà',tag:'Cảnh giác link lạ',desc:'Một người lạ gửi đường dẫn yêu cầu đăng nhập để nhận quà.',good:['khong bam link','xoa tin nhan','canh bao','bao cao'],bad:['bam link','dang nhap','nhap mat khau'],suggest:'Bỏ qua link lạ, xóa tin nhắn và nhắc bạn bè cảnh giác – quà thật không bắt đăng nhập tài khoản.'},
+  {id:'sc5',title:'Bị mời vào nhóm kín nội dung xấu',tag:'Nhóm kín nguy hiểm',desc:'Lời mời tham gia nhóm kín, yêu cầu không tiết lộ với phụ huynh.',good:['roi nhom','chan quan tri','bao cao','noi voi phu huynh'],bad:['tham gia','giu bi mat','chia se anh rieng'],suggest:'Rời nhóm ngay, chặn quản trị, báo cáo lên nền tảng và chia sẻ với phụ huynh để được tư vấn.'},
+  {id:'sc6',title:'Người quen cũ nhắn đe doạ',tag:'Người quen đe dọa',desc:'Một người từng quen biết dùng lời lẽ đe dọa, ép bạn gửi tiền.',good:['giu bang chung','khong doi dap','bao cong an','nho phu huynh'],bad:['chuyen tien','dua tien','gap truc tiep'],suggest:'Giữ bình tĩnh, lưu toàn bộ tin nhắn, không đối đáp và nhờ người lớn hỗ trợ xử lý.'},
+  {id:'sc7',title:'Giả danh giáo viên/nhà trường gọi video',tag:'Mạo danh',desc:'Tài khoản lạ tự xưng giáo viên muốn gọi video để “xác minh thông tin”.',good:['xac minh qua kenh chinh','goi cho truong','tu choi','bao phu huynh'],bad:['cung cap thong tin','gui ma otp','gui anh'],suggest:'Xin liên hệ qua kênh chính thức của trường, từ chối cung cấp thông tin cá nhân và báo lại cho phụ huynh.'},
+  {id:'sc8',title:'Tài khoản bạn bè có vẻ bị hack',tag:'Tài khoản bị xâm nhập',desc:'Bạn bè nhắn tin vay tiền, nói gấp, văn phong lạ.',good:['goi truc tiep','xac minh lai','khong chuyen tien','bao cao tai khoan'],bad:['chuyen tien','gui the cao'],suggest:'Gọi trực tiếp để xác minh. Nếu nghi ngờ, không chuyển tiền và báo cáo tài khoản bị xâm nhập.'},
+  {id:'sc9',title:'Đường link học bổng yêu cầu đăng nhập',tag:'Học bổng giả',desc:'Trang giả mạo yêu cầu đăng nhập email để “nhận học bổng”.',good:['khong dang nhap','kiem tra ten mien','hoi giao vien','bao cao'],bad:['nhap mat khau','bam link'],suggest:'Kiểm tra tên miền chính thức, hỏi giáo viên hoặc phòng công tác – không nhập mật khẩu vào trang lạ.'},
+  {id:'sc10',title:'Gọi điện báo nhận bưu phẩm & yêu cầu phí',tag:'Bưu phẩm giả',desc:'Cuộc gọi yêu cầu thanh toán trước để nhận bưu phẩm.',good:['khong thanh toan','tu xem trang thai don hang','lien he hang van chuyen'],bad:['chuyen tien','cung cap dia chi'],suggest:'Đừng vội thanh toán. Kiểm tra lại trên ứng dụng chính hãng hoặc gọi tổng đài của đơn vị vận chuyển.'},
+  {id:'sc11',title:'QR thanh toán lạ trong sự kiện',tag:'QR lừa đảo',desc:'Ai đó đưa QR kêu “giảm giá” nhưng link chuyển về trang lạ.',good:['khong quet','xac minh ban to chuc','su dung kenh chinh'],bad:['quet qr','dang nhap','chuyen tien'],suggest:'Chỉ quét QR của ban tổ chức và kênh chính thức; nếu nghi ngờ, bỏ qua và báo người phụ trách.'},
+  {id:'sc12',title:'Xin mã OTP để “xác nhận”',tag:'OTP nguy hiểm',desc:'Tin nhắn yêu cầu bạn gửi mã OTP để xác nhận tài khoản.',good:['khong chia se otp','bao cao','kich hoat 2fa'],bad:['gui otp'],suggest:'OTP là bí mật tuyệt đối. Không chia sẻ cho bất kỳ ai và bật xác thực hai bước để an toàn hơn.'},
+  {id:'sc13',title:'Khảo sát nhận quà – yêu cầu thông tin cá nhân',tag:'Khảo sát giả',desc:'Form khảo sát yêu cầu số điện thoại, địa chỉ, ngày sinh để nhận quà.',good:['khong dien thong tin','chi thong tin can thiet','xem chinh sach rieng tu'],bad:['dien du thong tin','gui so dien thoai','gui dia chi'],suggest:'Chỉ điền thông tin tối thiểu và cần thiết; nếu form yêu cầu dữ liệu nhạy cảm thì dừng lại ngay.'},
+  {id:'sc14',title:'Việc làm thêm online – yêu cầu đặt cọc',tag:'Tuyển dụng giả',desc:'Tin nhắn mời việc nhẹ lương cao nhưng phải đặt cọc/ứng tiền.',good:['khong dat coc','xac minh cong ty','doc review','bao cao'],bad:['chuyen tien','dat coc'],suggest:'Không có đơn vị uy tín nào yêu cầu đặt cọc trước. Hãy tra cứu công ty và tránh chuyển tiền.'},
+  {id:'sc15',title:'Mạo danh công an/toà án gửi giấy triệu tập',tag:'Mạo danh cơ quan',desc:'Gọi/nhắn yêu cầu chuyển tiền để “giải quyết hồ sơ”.',good:['khong chuyen tien','den tru so chinh thuc','goi tong dai chinh thuc'],bad:['chuyen tien','cung cap thong tin'],suggest:'Cơ quan chính thức không yêu cầu chuyển tiền qua điện thoại. Hãy đến trụ sở hoặc gọi tổng đài xác minh.'},
+  {id:'sc16',title:'Rủ rê tham gia video call riêng tư',tag:'Gọi riêng tư',desc:'Người lạ rủ tham gia video call, gợi ý chia sẻ hình ảnh cá nhân.',good:['tu choi','chan','bao cao','noi voi phu huynh'],bad:['dong y','gui anh rieng'],suggest:'Lịch sự từ chối, không chia sẻ hình ảnh cá nhân. Chặn và báo cáo tài khoản đó nhé.'},
+  // ====== Bổ sung 2 tình huống để cân đối khung ======
+  {id:'sc17',title:'Dụ dỗ đầu tư tiền số siêu lợi nhuận',tag:'Đầu tư rủi ro',desc:'Tin nhắn/nhóm chat mời đầu tư coin với cam kết lãi khủng, yêu cầu nạp tiền nhanh.',good:['khong chuyen tien','xac minh cong ty','doc canh bao','hoi nguoi co kinh nghiem'],bad:['nap tien','chuyen tien','gui vi'],suggest:'Đầu tư uy tín không hối thúc nạp tiền. Hãy hỏi người có kinh nghiệm, đọc cảnh báo và tuyệt đối không chuyển tiền vội.'},
+  {id:'sc18',title:'Xin quyền truy cập thiết bị/mạng gia đình',tag:'Quyền truy cập',desc:'Ai đó xin mật khẩu Wi-Fi, đề nghị cài phần mềm/điều khiển từ xa máy tính của bạn.',good:['khong chia se mat khau','khong cai phan mem la','tu van phu huynh','kiem tra bao mat'],bad:['chia se mat khau','cai teamviewer','cho dieu khien'],suggest:'Giữ riêng mật khẩu Wi‑Fi, không cài phần mềm lạ. Nếu cần hỗ trợ, hãy nhờ phụ huynh/giáo viên và kiểm tra bảo mật trước.'}
+];
+
+const grid = document.getElementById('scenarioGrid');
+scenarios.forEach(s => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <span class="badge">${s.tag}</span>
+    <h3>${s.title}</h3>
+    <p class="desc">${s.desc}</p>
+    <label for="ta-${s.id}"><strong>Hành động của bạn</strong> (mô tả ngắn gọn):</label>
+    <textarea id="ta-${s.id}" placeholder="Ví dụ: Chặn tài khoản, báo cáo và nói với phụ huynh..."></textarea>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="evaluateAction('${s.id}')">Đánh giá</button>
+      <button class="btn btn-secondary" onclick="suggest('${s.id}')">Gợi ý nhanh</button>
+      <button class="btn btn-ghost" onclick="clearField('${s.id}')">Xoá</button>
+    </div>
+    <div id="res-${s.id}" class="result" hidden></div>
+  `;
+  grid.appendChild(card);
+});
+
+function normalize(str){
+  return (str||'').toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9\s]/g,' ')
+    .replace(/\s+/g,' ').trim();
+}
+
+function evaluateAction(id){
+  const s = scenarios.find(x=>x.id===id);
+  const ta = document.getElementById('ta-'+id);
+  const res = document.getElementById('res-'+id);
+  const text = normalize(ta.value);
+  if(!text){ res.hidden=false; res.className='result warn'; res.innerHTML='⚠️ Vui lòng nhập hành động bạn sẽ làm.'; return; }
+  const hasGood = s.good.some(k=>text.includes(normalize(k)));
+  const hasBad  = s.bad.some(k=>text.includes(normalize(k)));
+  res.hidden=false;
+  if(hasGood && !hasBad){
+    res.className='result ok';
+    res.innerHTML='✅ Tuyệt! Hành động của bạn phù hợp khuyến nghị an toàn. Nhớ lưu bằng chứng và thông báo cho người lớn nhé.';
+  } else if(hasGood && hasBad){
+    res.className='result warn';
+    res.innerHTML='⚠️ Có điểm tốt nhưng vẫn lẫn hành động rủi ro. Hãy bỏ các bước nguy hiểm (gửi thông tin, nhấn link lạ, gặp riêng).';
+  } else if(!hasGood && hasBad){
+    res.className='result bad';
+    res.innerHTML='⛔ Rất nguy hiểm. Đừng gửi thông tin, đừng nhấn link, đừng chuyển tiền. Chuyển sang: chặn/báo cáo và báo cho người lớn.';
+  } else {
+    res.className='result warn';
+    res.innerHTML='ℹ️ Hành động chưa rõ mức an toàn. Bạn có thể: chặn, báo cáo, lưu bằng chứng và nhờ phụ huynh/giáo viên hỗ trợ.';
+  }
+}
+
+function suggest(id){
+  const s = scenarios.find(x=>x.id===id);
+  const ta = document.getElementById('ta-'+id);
+  ta.value = s.suggest || 'Chặn tài khoản, lưu screenshot, báo cáo lên nền tảng và thông báo cho phụ huynh/giáo viên.';
+  evaluateAction(id);
+}
+
+function clearField(id){
+  const ta = document.getElementById('ta-'+id);
+  const res = document.getElementById('res-'+id);
+  ta.value=''; res.hidden=true; res.textContent='';
+}
+</script>
+</body>
+</html>
